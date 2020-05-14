@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+    <!-- 網路上的sidebar原始黨 -->
+    <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="all">
+    <!--- 客製化css都在這 -->
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" type="text/css" href="css/animate.min.css" /> -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/28b38896b0.js" crossorigin="anonymous"></script> -->
+    <script src="js/all.min.js"></script>
+    <title>Demo</title>
+</head>
+
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i> 回首頁</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="product3.html"><i class="fa fa-utensils"></i> 全部 <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product2.html"><i class="fa fa-pepper-hot"></i> 辣味咖哩飯</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product1.html"><i class="fa fa-child"></i> 兒童餐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html"><i class="fa fa-glass-cheers"></i> 飲料</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order-info.html"><i class="fa fa-list"></i> 點餐紀錄</a>
+                      </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li> -->
+                    <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+                    <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+                </ul>
+                <!-- <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+            </div>
+            <div class="cart cart box_1" id="view-cart">
+                <form action="#" method="post" class="last">
+                    <input type="hidden" name="cmd" value="_cart">
+                    <input type="hidden" name="display" value="1">
+                    <button class="shopping-cart" type="button" name="submit" value=""><i class="fa fa-cart-arrow-down"
+                            aria-hidden="true"></i></button>
+                </form>
+                <div id="cart-number">0</div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="flex-shrink-0"> 
+        <div id="wrapper" class="toggled">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <div class="top-content">
+                    <div class="desk-number">
+                        桌號: 22號
+                    </div>
+                    <div class="order-content">
+
+                    </div>              
+                </div>
+                <div class="bottom-content">
+                    <ul class="bottom-sidebar-nav">
+                        <li class="sidebar-button"> <a id="confirm-order-btn" href="shopping-cart.html"> 確認點餐 </a> </li>
+                    </ul>
+                </div>
+            </div> <!-- /#sidebar-wrapper -->
+        </div> <!-- /#wrapper -->
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-4 col-sm-6"> -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali&name=咖哩雞肉定食&displayname=咖哩雞肉定食(咖哩雞肉飯 、 味增湯 、 茶碗蒸 )&price=150'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali&name=咖哩雞肉定食&displayname=咖哩雞肉定食(咖哩雞肉飯 、 味增湯 、 茶碗蒸 )&price=150">
+                                <img class="pic-1" src="images/kali.jpg">
+                                <!-- <img class="pic-2" src="images/kali.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                                <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                                <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                            </ul> -->
+                            <!-- <span class="product-new-label">New</span> -->
+                            <!-- <span class="product-discount-label">-10%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali&name=咖哩雞肉定食&displayname=咖哩雞肉定食(咖哩雞肉飯 、 味增湯 、 茶碗蒸 )&price=150">咖哩雞肉定食</a></h3>
+                            <!-- <div class="detail">其特點是以多種香料作為材料，通常包括薑黃粉，新鮮或乾的辣椒，複雜的組合而成。</div> -->
+                            <div class="price">
+                                $150
+                                <span>$200</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="150" data-name="咖哩雞肉定食" data-pid="kali"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali1&name=咖哩漢堡排定食&displayname=咖哩漢堡排定食(咖哩漢堡排飯 、 味增湯 、 茶碗蒸 )&price=300'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali1&name=咖哩漢堡排定食&displayname=咖哩漢堡排定食(咖哩漢堡排飯 、 味增湯 、 茶碗蒸 )&price=300">
+                                <img class="pic-1" src="images/kali1.jpg">
+                                <!-- <img class="pic-2" src="images/kali1.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-discount-label">-12%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali1&name=咖哩漢堡排定食&displayname=咖哩漢堡排定食(咖哩漢堡排飯 、 味增湯 、 茶碗蒸 )&price=300">咖哩漢堡排定食</a></h3>
+                            <!-- <div class="detail">加入多種蔬菜煮出的咖哩，好吃又營養，加上鮮嫩多汁的漢堡排。</div> -->
+                            <div class="price">
+                                $300
+                                <span>$350</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="300" data-name="咖哩漢堡排定食" data-pid="kali1"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali2&name=咖哩牛肉定食&displayname=咖哩牛肉定食(咖哩牛肉飯 、 味增湯 、 茶碗蒸 )&price=200'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali2&name=咖哩牛肉定食&displayname=咖哩牛肉定食(咖哩牛肉飯 、 味增湯 、 茶碗蒸 )&price=200">
+                                <img class="pic-1" src="images/kali2.jpg">
+                                <!-- <img class="pic-2" src="images/kali2.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-discount-label">-12%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali2&name=咖哩牛肉定食&displayname=咖哩牛肉定食(咖哩牛肉飯 、 味增湯 、 茶碗蒸 )&price=200">咖哩牛肉定食</a></h3>
+                            <!-- <div class="detail">其特點是以多種香料作為材料，通常包括薑黃粉，新鮮或乾的辣椒，複雜的組合而成。</div> -->
+                            <div class="price">
+                                $200
+                                <span>$250</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="200" data-name="咖哩牛肉定食" data-pid="kali2"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali3&name=皮卡丘咖哩定食&displayname=皮卡丘咖哩定食(造型咖哩飯 、 味增湯 、 茶碗蒸 )&price=250'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali3&name=皮卡丘咖哩定食&displayname=皮卡丘咖哩定食(造型咖哩飯 、 味增湯 、 茶碗蒸 )&price=250">
+                                <img class="pic-1" src="images/kali3.jpg">
+                                <!-- <img class="pic-2" src="images/kali3.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-discount-label">-12%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali3&name=皮卡丘咖哩定食&displayname=皮卡丘咖哩定食(造型咖哩飯 、 味增湯 、 茶碗蒸 )&price=250">皮卡丘咖哩定食</a></h3>
+                            <!-- <div class="detail">造型咖哩飯，加入蜂蜜、水果等食材，適合小孩吃</div> -->
+                            <div class="price">
+                                $250
+                                <span>$300</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="250" data-name="皮卡丘咖哩定食" data-pid="kali3"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- </div>
+        <div class="row"> -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali4&name=南洋咖哩定食&displayname=南洋咖哩定食(南洋咖哩飯 、 味增湯 、 茶碗蒸 )&price=200'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali4&name=南洋咖哩定食&displayname=南洋咖哩定食(南洋咖哩飯 、 味增湯 、 茶碗蒸 )&price=200">
+                                <img class="pic-1" src="images/kali4.jpg">
+                                <!-- <img class="pic-2" src="images/kali4.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-new-label">New</span> -->
+                            <!-- <span class="product-discount-label">-10%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali4&name=南洋咖哩定食&displayname=南洋咖哩定食(南洋咖哩飯 、 味增湯 、 茶碗蒸 )&price=200">南洋咖哩定食</a></h3>
+                            <!-- <div class="detail">其特點是以多種香料作為材料，通常包括薑黃粉，新鮮或乾的辣椒，複雜的組合而成。</div> -->
+                            <div class="price">
+                                $200
+                                <span>$250</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="200" data-name="南洋咖哩定食" data-pid="kali4"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali5&name=豬排咖哩定食&displayname=豬排咖哩定食(豬排咖哩飯 、 味增湯 、 茶碗蒸 )&price=300'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali5&name=豬排咖哩定食&displayname=豬排咖哩定食(豬排咖哩飯 、 味增湯 、 茶碗蒸 )&price=300">
+                                <img class="pic-1" src="images/kali5.jpg">
+                                <!-- <img class="pic-2" src="images/kali5.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-discount-label">-12%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali5&name=豬排咖哩定食&displayname=豬排咖哩定食(豬排咖哩飯 、 味增湯 、 茶碗蒸 )&price=300">豬排咖哩定食</a></h3>
+                            <!-- <div class="detail">加入多種蔬菜煮出的咖哩，好吃又營養，加上鮮嫩多汁的漢堡排。</div> -->
+                            <div class="price">
+                                $300
+                                <span>$350</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="300" data-name="豬排咖哩定食" data-pid="kali5"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali6&name=咖哩蘋果雞肉定食&displayname=咖哩蘋果雞肉定食(咖哩蘋果雞肉飯 、 味增湯 、 茶碗蒸 )&price=200'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali6&name=咖哩蘋果雞肉定食&displayname=咖哩蘋果雞肉定食(咖哩蘋果雞肉飯 、 味增湯 、 茶碗蒸 )&price=200">
+                                <img class="pic-1" src="images/kali6.jpg">
+                                <!-- <img class="pic-2" src="images/kali6.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-discount-label">-12%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali6&name=咖哩蘋果雞肉定食&displayname=咖哩蘋果雞肉定食(咖哩蘋果雞肉飯 、 味增湯 、 茶碗蒸 )&price=200">咖哩蘋果雞肉定食</a></h3>
+                            <!-- <div class="detail">日本咖哩風味較為甘甜，會加入蜂蜜、水果等食材，讓口味充滿多層次的變化。</div> -->
+                            <div class="price">
+                                $200
+                                <span>$250</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="200" data-name="咖哩蘋果雞肉定食" data-pid="kali6"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=kali7&name=熊熊咖哩定食&displayname=熊熊咖哩定食(造型咖哩飯 、 味增湯 、 茶碗蒸 )&price=250'">
+                        <div class="product-image">
+                            <a href="prodcut_detail.html?pid=kali7&name=熊熊咖哩定食&displayname=熊熊咖哩定食(造型咖哩飯 、 味增湯 、 茶碗蒸 )&price=250">
+                                <img class="pic-1" src="images/kali7.jpg">
+                                <!-- <img class="pic-2" src="images/kali7.jpg"> -->
+                            </a>
+                            <!-- <ul class="social">
+                            <li><a href="#" data-tip="Quick View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                        </ul> -->
+                            <!-- <span class="product-discount-label">-12%</span> -->
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="prodcut_detail.html?pid=kali7&name=熊熊咖哩定食&displayname=熊熊咖哩定食(造型咖哩飯 、 味增湯 、 茶碗蒸 )&price=250">熊熊咖哩定食</a></h3>
+                            <!-- <div class="detail">造型咖哩飯，加入蜂蜜、水果等食材，適合小孩吃</div> -->
+                            <div class="price">
+                                $250
+                                <span>$300</span>
+                            </div>
+                            <!-- <a class="add-to-cart" data-price="250" data-name="熊熊咖哩定食" data-pid="kali7"
+                                href="javascript:void(0);" data-tip="Add to Cart"><i
+                                    class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<script>
+    var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+    var total = 0
+  //  window.localStorage.clear();
+    $(function () {
+        // 亂數取桌號
+        if(window.localStorage.getItem("desk-number") == null)
+        {
+            var desk_number = Math.floor(Math.random()*50)
+            window.localStorage.setItem("desk-number", desk_number);
+        }
+        
+        $('.desk-number').html('桌號: '+window.localStorage.getItem("desk-number")+'號');
+
+        var cart_total_number = 0
+        var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+        var cart_content = ''
+        if (window.localStorage.getItem("cart-food-data") != null) {
+            $(cart_data).each(function (index) {
+                console.log(cart_data[index].num);
+                cart_total_number = cart_total_number + cart_data[index].num
+                cart_content += '<div class="cart-content">\
+                            <img src="images/'+cart_data[index].pid+'.jpg" alt="kali">\
+                            <span>'+ cart_data[index].name +' * '+ cart_data[index].num +'</span>\
+                        </div>'
+            })
+            $('#cart-number').html(cart_total_number);
+            $('#cart-number').show();
+            $('.order-content').html(cart_content);
+        }
+    })
+    $('#view-cart').click(function () {
+        window.location.href = 'shopping-cart.html';
+    });
+    $('.add-to-cart').click(function () {
+        var pid = $(this).data('pid');
+        var name = $(this).data('name');
+        var price = $(this).data('price');
+        var content = '';
+        // window.localStorage.clear();
+        if (window.localStorage.getItem("cart-food-data") != null) {
+            var arr_obj_param = { 'pid': pid, 'name': name, 'price': price, 'num': 1 };
+            var temp_array = [];
+            var obj_res = JSON.parse(window.localStorage.getItem("cart-food-data"));
+            var count = 0;
+            var total = 0;
+            $(obj_res).each(function (index) {
+
+                if (obj_res[index].pid == pid) {
+                    var number = obj_res[index].num + 1;
+                    temp_array.push({ 'pid': pid, 'name': name, 'price': price, 'num': number });
+                    count++;
+                    total = number + total;
+                    content += '<div class="cart-content">\
+                            <img src="images/'+pid+'.jpg" alt="kali">\
+                            <span>'+ name +' * '+ number +'</span>\
+                        </div>'
+                }
+                else 
+                {
+                   
+                    temp_array.push(obj_res[index]);
+                    total = obj_res[index].num + total;
+                    content += '<div class="cart-content">\
+                            <img src="images/'+obj_res[index].pid+'.jpg" alt="kali">\
+                            <span>'+ obj_res[index].name +' * '+ obj_res[index].num +'</span>\
+                        </div>'
+                        
+                }
+
+            });
+            // console.log(count);
+            if (count == 0) {
+                content += '<div class="cart-content">\
+                            <img src="images/'+pid+'.jpg" alt="kali">\
+                            <span>'+ name +' * 1</span>\
+                        </div>'
+                total = 1 + total
+                obj_res.push(arr_obj_param);
+                // console.log(obj_res);
+                window.localStorage.setItem("cart-food-data", JSON.stringify(obj_res));
+            }
+            else {
+                // console.log(temp_array);
+                window.localStorage.setItem("cart-food-data", JSON.stringify(temp_array));
+            }
+            // $('#view-cart').addClass('animated infinite bounce');
+            // setTimeout(
+            //     function () {
+            //         $('#view-cart').removeClass('animated infinite bounce')
+            //     }, 2000);
+            $('#cart-number').html(total);
+            $('.order-content').html(content);
+        }
+        else {
+            var arr_obj_param = [{ 'pid': pid, 'name': name, 'price': price, 'num': 1 }];
+            window.localStorage.setItem("cart-food-data", JSON.stringify(arr_obj_param))
+            content += '<div class="cart-content">\
+                            <img src="images/'+pid+'.jpg" alt="kali">\
+                            <span>'+ name +' * 1</span>\
+                        </div>'
+            $('#cart-number').html(1);
+            $('#cart-number').show();
+            $('.order-content').html(content);
+        }
+    })
+</script>

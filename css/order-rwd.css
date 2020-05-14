@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@media screen and (max-width: 640px) {
+  /*order*/
+  .order {
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .order .lists {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .order .lists table {
+    width: 100%;
+    margin: auto;
+  }
+  .order .lists table tr {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    display: inline-flex;
+    position: relative;
+  }
+  .order .lists table td {
+    /* display: inline-block; */
+    display: inline-flex;
+  }
+  .order .lists table .pic img {
+    width: 150px;
+  }
+  .order .lists table .item_title {
+    text-align-last: left;
+    position: absolute;
+    top: 40px;
+  }
+  .order .lists table .select {
+    bottom: 60px;
+    position: absolute;
+  }
+  .order .lists table .select * {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .order .lists table .total_price {
+    font-size: 1.25rem;
+    border-top: 1px solid #eaf0ed;
+    border-bottom: 1px solid #eaf0ed;
+    text-align: right;
+    padding: 10px;
+    width: 100%;
+  }
+  /* .order .lists table .delete {
+    display: none;
+  } */
+  .order .order_info {
+    background: none;
+    width: 100%;
+    color: #eaf0ed;
+    background: #2e86de;
+  }
+  .order .order_info h2 {
+    color: #3f5d45;
+    background: #cae4f7;
+  }
+  .order .order_info div {
+    padding: 10px 30px;
+    color: #fff;
+  }
+  .lists table td img {
+    display: none;
+  }
+  .lists table th, .lists table td {
+    width: 25%;
+  }
+  /* .lists table th:last-child {
+    width: 15%;
+  } */
+  /*order*/
+
+  /*checkout*/
+  /*success*/
+  .success {
+    width: 100%;
+  }
+  .success a {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  /*success*/
+}
+@media screen and (max-width: 640px){
+    .order .lists table .select {
+        bottom: 80px;
+        position: absolute;
+        left: 255px;
+    }
+    .order .order_info div {
+        padding: 10px 30px;
+        /* color: #3f5d45; */
+    }
+    
+}
+/* .order a{
+    color: #fff;
+} */
+
+.order .lists table td:first-child {
+    text-align: left;
+    padding: 5px;
+}

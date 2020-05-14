@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+    <!-- 網路上的sidebar原始黨 -->
+    <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="all">
+    <!--- 客製化css都在這 -->
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" type="text/css" href="css/animate.min.css" /> -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/28b38896b0.js" crossorigin="anonymous"></script> -->
+    <script src="js/all.min.js"></script>
+    <title>Demo</title>
+</head>
+
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home"></i> 回首頁</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fa fa-utensils"></i> 全部 <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product2.html"><i class="fa fa-pepper-hot"></i> 辣味咖哩飯</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product1.html"><i class="fa fa-child"></i> 兒童餐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html"><i class="fa fa-glass-cheers"></i> 飲料</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order-info.html"><i class="fa fa-list"></i> 點餐紀錄</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li> -->
+                    <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+                    <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+                </ul>
+                <!-- <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+            </div>
+            <div class="cart cart box_1" id="view-cart">
+                <form action="#" method="post" class="last">
+                    <input type="hidden" name="cmd" value="_cart">
+                    <input type="hidden" name="display" value="1">
+                    <button class="shopping-cart" type="button" name="submit" value=""><i class="fa fa-cart-arrow-down"
+                            aria-hidden="true"></i></button>
+                </form>
+                <div id="cart-number">0</div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <a class="grey-btn" href="javascript:history.go(-1);"><i class="fas fa-undo-alt"></i> 回上一頁</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7 col-sm-12">
+                    <div class="product-large-image">
+                        <!-- <img class="pic-1" src="images/kali.jpg"> -->
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="product-name">
+                        咖哩雞肉定食(咖哩雞肉飯 + 味增湯 + 茶碗蒸 )
+                        <span class="price">$150</span>
+                    </div>
+                    <div class="prodcut_detail">
+                        
+                    </div>
+                    <div class="cart-action">
+                        <!-- <div id="minus-btn" style="display: inline-block;"><i class="fa fa-minus-circle" style="width: 2em; font-size: 1.8em;"> </i></div> -->
+                        <div class="cart-number">
+                            <div id="minus-btn" style="cursor: pointer;display: inline-block;"><i class="fa fa-minus-circle" style="vertical-align: middle;font-size: 2em;"></i></div>
+                            <input type="text" class="product-number" value="1" disabled>
+                            <div id="plus-btn" style="cursor: pointer;display: inline-block;"><i class="fa fa-plus-circle" style="vertical-align: middle;font-size: 2em;"></i></div>
+                        </div>
+                        <!-- <div id="plus-btn" style="display: inline-block;"><i class="fa fa-plus-circle" style="font-size: 1.8em;"></i></div> -->
+                        <div class="pd-add-to-cart"><i class="fas fa-shopping-basket"></i> 加入購物車</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
+<script>
+    var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+    var total = 0
+    //  window.localStorage.clear();
+    $(function () {
+        /********* 調整數量 start ************/
+        $('#plus-btn').click(function(){
+            var product_number = parseInt($('.product-number').val());
+            if(product_number < 99){
+                $('.product-number').val(product_number+1)
+            }
+            else
+            {
+                alert('不得大於99');
+            }
+        })
+        $('#minus-btn').click(function(){
+            var product_number = parseInt($('.product-number').val());
+            if(product_number <= 1){
+                alert('不能小於0');
+            }else{
+                $('.product-number').val(product_number-1)                
+            }
+        })
+        /********* 調整數量 end ************/
+        var getUrlString = location.href;
+        var url = new URL(getUrlString);
+        var url_pid = url.searchParams.get('pid')
+        var url_name = url.searchParams.get('name')
+        var url_display_name = url.searchParams.get('displayname')
+        var url_price = url.searchParams.get('price')
+        if(url_pid == 'drink'){
+            // 可樂
+            $('.prodcut_detail').html('1886年，美國喬治亞州的亞特蘭大市，有位名叫約翰•潘伯頓（Dr. John S. Pemberton）的藥劑師，他挑選了幾種特別的成分，發明出一款美味的糖漿，沒想到清涼、暢快的「可口可樂」就奇蹟般的出現了！潘伯頓相信這產品可能具有商業價值，因此把它送到傑柯藥局（Jacobs\' Pharmacy）販售，開始了「可口可樂」這個美國飲料的傳奇。而潘伯頓的事業合夥人兼會計師：法蘭克•羅賓森（Frank M. Robinson），認為兩個大寫C字母在廣告上可以有不錯的表現，所以創造了\"Coca-Cola\"這個名字。');
+        }
+        else if(url_pid == 'drink1')
+        {
+            // 雪碧
+            $('.prodcut_detail').html('「雪碧」汽水在1961年首次在美國推出，是透明氣泡飲料的領導品牌。 「雪碧」成為可口可樂公司繼「可口可樂」之後的第二大品牌，產品行銷超過190幾個國家，並在全球飲料市場排名第四，深受年輕人喜愛。 「雪碧」透明的飲料顏色以及清新的口感帶給人清涼解渴的暢快口感，鼓勵消費者突破自我束縛，盡情表達自我，勇敢做自己。');
+        }
+        else if(url_pid == 'drink2')
+        {
+            // 紅茶
+            $('.prodcut_detail').html('紅茶是經過採摘、萎凋、揉捻、發酵、乾燥等步驟生產出來的；比綠茶多了發酵的過程。發酵是指茶葉在空氣中氧化，發酵作用使得茶葉中的茶多酚和鞣質酸減少，產生了茶黃素、茶紅素等新的成分和醇類、醛類、酮類、酯類等芳香物質。因此，紅茶的茶葉呈黑色，或黑色中參雜著嫩芽的橙黃色；茶湯呈深紅色；香氣撲鼻；由於少了苦澀味，因而味道更香甜、醇厚、回甘。');
+        }
+        else
+        {
+            // 咖哩
+            $('.prodcut_detail').html('咖哩起源於印度，由於咖哩的辛辣與香味可以幫助遮掩羊肉的腥騷，此舉即為用以幫助不吃豬肉或牛肉的印度人。在泰米爾語中，「kari」是「醬」的意思。在馬來西亞，kari也稱curry.\
+                        dal稱kacang。早期印度被蒙古人所建立的莫臥兒帝國所統治過，其間從波斯帶來的飲食習慣，從而影響印度人的烹調風格直到現今。');
+        }
+        $('.product-name').html(url_display_name + '<span class="price">$' + url_price + '</span>')
+        $('.product-large-image').html('<img src="images/' + url_pid + '.jpg">')
+        // data-price="150" data-name="咖哩雞肉飯" data-pid="kali"
+        $('.pd-add-to-cart').data('price', url_price)
+        $('.pd-add-to-cart').data('name', url_name)
+        $('.pd-add-to-cart').data('pid', url_pid)
+        var cart_total_number = 0
+        var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+        var cart_content = ''
+        if (window.localStorage.getItem("cart-food-data") != null) {
+            $(cart_data).each(function (index) {
+                cart_total_number = cart_total_number + cart_data[index].num
+                cart_content += '<div class="cart-content">\
+                            <img src="images/'+ cart_data[index].pid + '.jpg" alt="kali">\
+                            <span>'+ cart_data[index].name + ' * ' + cart_data[index].num + '</span>\
+                        </div>'
+            })
+            $('#cart-number').html(cart_total_number);
+            $('#cart-number').show();
+            $('.order-content').html(cart_content);
+        }
+    })
+    $('#view-cart').click(function () {
+        window.location.href = 'shopping-cart.html';
+    });
+    $('.pd-add-to-cart').click(function () {
+
+        var pid = $(this).data('pid');
+        var name = $(this).data('name');
+        var price = $(this).data('price');
+        var num = parseInt($('.product-number').val());
+        if (num < 0) {
+            num = 1
+        }
+        if (num > 0) {
+            // window.localStorage.clear();
+            if (window.localStorage.getItem("cart-food-data") != null) {
+
+                var arr_obj_param = { 'pid': pid, 'name': name, 'price': price, 'num': num };
+                var temp_array = [];
+                var obj_res = JSON.parse(window.localStorage.getItem("cart-food-data"));
+                var count = 0;
+                var total = 0;
+                $(obj_res).each(function (index) {
+
+                    if (obj_res[index].pid == pid) {
+                        var number = obj_res[index].num + num;
+                        temp_array.push({ 'pid': pid, 'name': name, 'price': price, 'num': number });
+                        count++;
+                        total = number + total;
+                    }
+                    else {
+
+                        temp_array.push(obj_res[index]);
+                        total = obj_res[index].num + total;
+
+                    }
+
+                });
+
+                if (count == 0) {
+                    total = num + total
+                    obj_res.push(arr_obj_param);
+                    window.localStorage.setItem("cart-food-data", JSON.stringify(obj_res));
+                }
+                else {
+                    window.localStorage.setItem("cart-food-data", JSON.stringify(temp_array));
+                }
+
+                $('#cart-number').html(total);
+
+            }
+            else {
+                var arr_obj_param = [{ 'pid': pid, 'name': name, 'price': price, 'num': num }];
+                window.localStorage.setItem("cart-food-data", JSON.stringify(arr_obj_param))
+                $('#cart-number').html(num);
+                $('#cart-number').show();
+            }
+        }
+        else
+        {
+            alert('請輸入大於0的數字')
+        }
+
+
+    })
+
+</script>

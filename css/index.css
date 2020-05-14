@@ -1,0 +1,78 @@
+/* Custom page CSS
+-------------------------------------------------- */
+body{
+    background-color: #F0F8FF;
+}
+.carousel-item img {
+    height: 350px;
+}
+
+.service{
+    cursor: pointer;
+    width: 51%;
+    height: 100%;
+    background-color: steelblue;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+    position: fixed;
+    vertical-align: middle;
+    overflow-y: hidden;
+}
+
+.order{
+    cursor: pointer;
+    width: 51%;
+    height: 100%;
+    background-color: teal;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+    position: fixed;
+    right: 1px;
+    overflow: hidden;
+    
+}
+
+.service-font{
+    font-size: 5em;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.order-font{
+    font-size: 5em;
+    height: 100%;
+    vertical-align: middle;
+}
+    
+/*****  rwd ******/
+@media (max-width: 1024px){
+    .service-font{
+        font-size: 4em;
+        /* margin-top: 5%; */
+    }
+    
+    .order-font{
+        font-size: 4em;
+        /* margin-top: 5%; */
+    }
+}
+
+@media (height: 768px){
+    .service-font{
+        margin-top: 20%;
+    }
+    .order-font{
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-height:1024px) and (max-height: 1366px){
+    .service-font{
+        margin-top: 50%;
+    }
+    .order-font{
+        margin-top: 50%;
+    }
+}

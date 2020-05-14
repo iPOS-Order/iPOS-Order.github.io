@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/cart.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/rwd.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/cart-rwd.css" type="text/css" media="all">
+  <!-- <link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="all"> -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="https://kit.fontawesome.com/28b38896b0.js" crossorigin="anonymous"></script> -->
+  <script src="js/all.min.js"></script>
+  <title>Demo</title>
+</head>
+
+<body>
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fa fa-home"></i> 回首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product3.html"><i class="fa fa-utensils"></i> 全部 <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product2.html"><i class="fa fa-pepper-hot"></i> 辣味咖哩飯</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product1.html"><i class="fa fa-child"></i> 兒童餐</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html"><i class="fa fa-glass-cheers"></i> 飲料</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order-info.html"><i class="fa fa-list"></i> 點餐紀錄</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+        <!-- <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+  </header>
+  <main role="main" class="flex-shrink-0">
+    <div class="container">
+      <div class="cart">
+        <div class="lists">
+          <div class="title">您的點餐清單</div>
+          <table class="cart-detail">
+
+          </table>
+        </div>
+      </div>
+      <div class="order_info">
+        <h2>訂單摘要</h2>
+        <!-- <div class="price">
+          <span>小計</span>
+          <span>$11</span>
+        </div>
+        <div class="fee">
+          <span>運費</span>
+          <span>$11</span>
+        </div> -->
+        <div class="total">
+          <span>小計</span>
+          <span id="total-price">$0</span>
+        </div>
+        <div class="checkout" id="cart-confirm">送出</div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
+<script>
+  $(function () {
+    var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+    var total = 0
+    //  window.localStorage.clear();
+    if (window.localStorage.getItem("cart-food-data") != null) {
+      $(cart_data).each(function (index) {
+        $(".cart-detail").append(
+          '<tr class="' + cart_data[index].pid + '">\
+                <td class="pic">\
+                  <img src="images/'+ cart_data[index].pid + '.jpg" alt="">\
+                </td>\
+                <td class="item_title">\
+                  <p>' + cart_data[index].name + '</p>\
+                  <p class="price">$' + cart_data[index].price + '</p>\
+                </td>\
+                <td class="select">\
+                  <div class="number-spinner minus-btn" data-pid="'+cart_data[index].pid+'"><i class="fa fa-minus-circle" style="width: 1em; font-size: 1.5em;"> </i></div>\
+                  <input type="text" class="number" disabled oninput="myFunc1(this.value, \''+ cart_data[index].pid + '\')" value="' + cart_data[index].num + '">\
+                  <div class="number-spinner plus-btn" data-pid="'+cart_data[index].pid+'"><i class="fa fa-plus-circle" style="width: 1em; font-size: 1.5em;"> </i></div>\
+                </td>\
+                <td>\
+                  <p class="total_price">$' + (cart_data[index].price * cart_data[index].num).toFixed(0) + '</p>\
+                </td>\
+                <td class="delete">\
+                 <a class="delete_btn" data-pid="'+ cart_data[index].pid + '"><i class="fa fa-trash"></i></a>\
+                </td>\
+              </tr>'
+        );
+        total = total + (cart_data[index].price * cart_data[index].num)
+      })
+      $('#total-price').html(total)
+    } else {
+      $(".cart-detail").append('<tr><td colspan="5" style="font-size:1.5rem;">您的點餐清單是空的</td></tr>');
+    }
+
+    /********* 調整數量 start ************/
+    $('.plus-btn').click(function () {
+      var product_number = parseInt($(this).parent('td').find('.number').val());
+      if(product_number < 99){
+        var val = product_number + 1;
+        $(this).parent('td').find('.number').val(product_number + 1)
+        var pid = $(this).data('pid');
+        myFunc1(val, pid);
+      }
+      else
+      {
+        alert('不得大於99');
+      }
+    })
+    $('.minus-btn').click(function () {
+      var product_number = parseInt($(this).parent('td').find('.number').val());
+      if (product_number > 1) {
+        $(this).parent('td').find('.number').val(product_number - 1)
+        var pid = $(this).data('pid');
+        var val = product_number - 1;
+        myFunc1(val, pid);
+      }
+      else{
+        alert('不能小於0');
+      }
+    })
+    /********* 調整數量 end ************/
+
+    $('.delete_btn').click(function () {
+      var res_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+      var current_pid = $(this).data('pid')
+      var current_total = 0
+      var temp_array = []
+      var count = 0
+      $(res_data).each(function (index) {
+        if (res_data[index].pid != current_pid) {
+          count++
+          temp_array.push(res_data[index])
+          current_total = current_total + (res_data[index].price * res_data[index].num)
+        }
+      })
+      if (count == 0) {
+        localStorage.removeItem('cart-food-data');
+        // window.localStorage.clear();
+        $(".cart-detail").append('<tr><td colspan="5">您的點餐清單是空的</td></tr>');
+      }
+      else {
+        window.localStorage.setItem("cart-food-data", JSON.stringify(temp_array));
+      }
+      $('#total-price').html(current_total)
+      $('.' + current_pid).remove()
+
+    })
+    $('#cart-confirm').click(function () {
+      if (window.localStorage.getItem("cart-food-data") != null) {
+        window.localStorage.setItem("order-food-data", window.localStorage.getItem("cart-food-data"));
+        localStorage.removeItem('cart-food-data');
+        window.location.href = 'order-info.html'
+      }
+      else {
+        alert('請點餐');
+      }
+
+    })
+    // $('.number').on('keyup', function() {
+    //     alert($(this).val());
+    // });
+
+  });
+  function myFunc1(val, pid) {
+    // alert(val)
+    var temp_array = [];
+    var sub_total = 0;
+    var total = 0;
+    if (window.localStorage.getItem("cart-food-data") != null && val != 0) {
+      var cart_res = JSON.parse(window.localStorage.getItem("cart-food-data"))
+      $(cart_res).each(function (index) {
+        if (cart_res[index].pid == pid) {
+          var number = parseInt(val)
+          temp_array.push({ 'pid': cart_res[index].pid, 'name': cart_res[index].name, 'price': cart_res[index].price, 'num': number });
+          sub_total = cart_res[index].price * val
+          total = total + sub_total
+        }
+        else {
+          temp_array.push(cart_res[index]);
+          total = total + (cart_res[index].price * cart_res[index].num)
+        }
+      })
+      window.localStorage.setItem("cart-food-data", JSON.stringify(temp_array));
+      $('.' + pid).find('.total_price').html('$' + sub_total)
+      $('#total-price').html(total);
+    }
+  }
+</script>
