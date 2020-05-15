@@ -19,14 +19,22 @@
   /* margin-right: 20px; */
 }
 
-.lists .title {
-  text-align: center;
-  color: #333;
-  /* background: #2e86de; */
-  font-size: 1.5rem;
+.lists .title-block {
   padding: 15px 0;
   margin-bottom: 20px;
   border-bottom: 1px solid #333;
+}
+
+.lists .title-block .title {
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.lists .title-block .back-btn {
+  position: absolute;
+  margin-top: -0.5%;
 }
 
 .lists table {
@@ -35,6 +43,9 @@
   border-collapse: collapse;
   background-color: #fff;
   border-radius: 15px;
+
+  word-wrap: break-word;
+  table-layout: fixed;
 }
 
 .lists table tr {
@@ -48,6 +59,26 @@
 .lists table td {
   text-align: center;
   padding: 0 10px;
+}
+
+.lists table .pic{
+  width: 20%;
+}
+.lists table .item_title{
+  width: 30%;
+}
+.lists table .select{
+  width: 30%;
+}
+.lists table .total-price-td{
+  width: 15%;
+}
+.lists table .delete{
+  width: 7%;
+}
+.lists .total_price{
+  line-height: 145px;
+  height: 130px;
 }
 
 .lists table td img {
@@ -133,6 +164,7 @@
   font-size: 1.5rem;
   border-radius: 50px;
   float: right;  
+  margin-bottom: 3%;
 }
 
 .delete_btn{
@@ -145,7 +177,7 @@ color: #fff;
 }
 
 main > .container {
-  /* padding: 60px 0px 0; */
-  margin-top: 1%;
+  padding: 45px 0px 0px 0px;
+  /* margin-top: 1%; */
   /* margin-left: 0px; */
 }

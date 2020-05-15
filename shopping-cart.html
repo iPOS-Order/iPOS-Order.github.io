@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/cart.css" type="text/css" media="all">
   <link rel="stylesheet" href="css/rwd.css" type="text/css" media="all">
   <link rel="stylesheet" href="css/cart-rwd.css" type="text/css" media="all">
+  <!-- <link rel="stylesheet" type="text/css" href="css/animate.min.css" /> -->
   <!-- <link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="all"> -->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -24,6 +25,11 @@
 </head>
 
 <body>
+  <!-- loading -->
+  <div class="load-bg">
+    <div id="loader"></div>
+  </div>
+  
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -71,7 +77,11 @@
     <div class="container">
       <div class="cart">
         <div class="lists">
-          <div class="title">您的點餐清單</div>
+          
+          <div class="title-block">
+            <div class="back-btn"><a class="grey-btn" href="javascript:history.go(-1);"><i class="fas fa-undo-alt"></i> 繼續點餐</a></div> 
+            <div class="title">您的點餐清單 </div> 
+          </div>
           <table class="cart-detail">
 
           </table>
@@ -102,6 +112,10 @@
   $(function () {
     var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
     var total = 0
+    // loading mask
+    $('li a').click(function () {
+      $('.load-bg').show();
+    });
     //  window.localStorage.clear();
     if (window.localStorage.getItem("cart-food-data") != null) {
       $(cart_data).each(function (index) {
@@ -115,11 +129,11 @@
                   <p class="price">$' + cart_data[index].price + '</p>\
                 </td>\
                 <td class="select">\
-                  <div class="number-spinner minus-btn" data-pid="'+cart_data[index].pid+'"><i class="fa fa-minus-circle" style="width: 1em; font-size: 1.5em;"> </i></div>\
+                  <div class="number-spinner minus-btn" data-pid="'+ cart_data[index].pid + '"><i class="fa fa-minus-circle" style="width: 1em; font-size: 1.5em;"> </i></div>\
                   <input type="text" class="number" disabled oninput="myFunc1(this.value, \''+ cart_data[index].pid + '\')" value="' + cart_data[index].num + '">\
-                  <div class="number-spinner plus-btn" data-pid="'+cart_data[index].pid+'"><i class="fa fa-plus-circle" style="width: 1em; font-size: 1.5em;"> </i></div>\
+                  <div class="number-spinner plus-btn" data-pid="'+ cart_data[index].pid + '"><i class="fa fa-plus-circle" style="width: 1em; font-size: 1.5em;"> </i></div>\
                 </td>\
-                <td>\
+                <td class="total-price-td">\
                   <p class="total_price">$' + (cart_data[index].price * cart_data[index].num).toFixed(0) + '</p>\
                 </td>\
                 <td class="delete">\
@@ -129,7 +143,7 @@
         );
         total = total + (cart_data[index].price * cart_data[index].num)
       })
-      $('#total-price').html(total)
+      $('#total-price').html('$'+total)
     } else {
       $(".cart-detail").append('<tr><td colspan="5" style="font-size:1.5rem;">您的點餐清單是空的</td></tr>');
     }
@@ -137,15 +151,11 @@
     /********* 調整數量 start ************/
     $('.plus-btn').click(function () {
       var product_number = parseInt($(this).parent('td').find('.number').val());
-      if(product_number < 99){
+      if (product_number < 99) {
         var val = product_number + 1;
         $(this).parent('td').find('.number').val(product_number + 1)
         var pid = $(this).data('pid');
         myFunc1(val, pid);
-      }
-      else
-      {
-        alert('不得大於99');
       }
     })
     $('.minus-btn').click(function () {
@@ -155,9 +165,6 @@
         var pid = $(this).data('pid');
         var val = product_number - 1;
         myFunc1(val, pid);
-      }
-      else{
-        alert('不能小於0');
       }
     })
     /********* 調整數量 end ************/
@@ -183,7 +190,7 @@
       else {
         window.localStorage.setItem("cart-food-data", JSON.stringify(temp_array));
       }
-      $('#total-price').html(current_total)
+      $('#total-price').html('$'+current_total)
       $('.' + current_pid).remove()
 
     })
@@ -191,7 +198,14 @@
       if (window.localStorage.getItem("cart-food-data") != null) {
         window.localStorage.setItem("order-food-data", window.localStorage.getItem("cart-food-data"));
         localStorage.removeItem('cart-food-data');
-        window.location.href = 'order-info.html'
+        window.location.href = 'order-info.html';
+        // $('#cart-confirm').addClass('bounceOut animated');
+
+        // setTimeout(
+        //   function () {
+        //     $('#cart-confirm').removeClass('bounceOut animated')
+        //   }, 2000);
+          $(".load-bg").show();
       }
       else {
         alert('請點餐');
@@ -203,6 +217,7 @@
     // });
 
   });
+
   function myFunc1(val, pid) {
     // alert(val)
     var temp_array = [];
@@ -224,7 +239,7 @@
       })
       window.localStorage.setItem("cart-food-data", JSON.stringify(temp_array));
       $('.' + pid).find('.total_price').html('$' + sub_total)
-      $('#total-price').html(total);
+      $('#total-price').html('$'+total);
     }
   }
 </script>

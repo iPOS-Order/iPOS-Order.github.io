@@ -17,7 +17,29 @@
   .cart .lists table {
     width: 90%;
     margin: auto;
+    word-wrap: unset;
+    table-layout: auto;
   }
+  .lists table .pic{
+    width: auto;
+  }
+  .lists table .item_title{
+    width: auto;
+  }
+  .lists table .select{
+    width: auto;
+  }
+  .lists table .total-price-td{
+    width: auto;
+  }
+  .lists table .delete{
+    width: auto;
+  }
+  .lists .total_price{
+    line-height: 30px;
+    height: auto;
+  }
+
   .cart .lists table tr {
     width: 100%;
     height: auto;

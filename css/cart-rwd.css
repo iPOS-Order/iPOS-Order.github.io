@@ -26,6 +26,9 @@
     .order_info .checkout {
         font-size: 1rem;
     }
+    .lists .title-block .back-btn {
+        display: none;
+    }
 }
 @media screen and (max-width: 360px){
     .cart .lists table .select {
@@ -43,7 +46,7 @@
 
 .cart .lists table td:first-child {
     text-align: left;
-    padding: 5px;
+    padding: 10px;
 }
 /* bootstrap container */
 @media (min-width: 992px){

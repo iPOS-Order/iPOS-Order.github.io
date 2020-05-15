@@ -17,7 +17,7 @@ a:link{text-decoration:none; }  /* 指正常的未被访问过的链接*/
 
 a:visited{text-decoration:none; }/*指已经访问过的链接*/
 
-a:hover{text-decoration:none;}/*指鼠标在链接*/}
+a:hover{text-decoration:none;}/*指鼠标在链接*/
 
 a:active{text-decoration:none;}/* 指正在点的链接*/ 
 
@@ -290,6 +290,7 @@ a:active{text-decoration:none;}/* 指正在点的链接*/
     background-color: #e68686;
     border-radius: 55px;
     transition: all 0.3s;
+    margin-top: 2%;
 }
 .grey-btn{
     border: 1px solid #e5e5e5;
@@ -309,7 +310,7 @@ a:active{text-decoration:none;}/* 指正在点的链接*/
 }
 .cart-number{
     display: inline-block;
-    margin-left: -3%;
+    margin-left: -15%;
     margin-top: 4%; 
 }
 .cart-number input{
@@ -361,6 +362,45 @@ a:active{text-decoration:none;}/* 指正在点的链接*/
     -webkit-box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
     box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
 }
+
+/* loading popup */
+/* Center the loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .load-bg{
+    background-color:#000;
+    opacity:0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    position: fixed;
+    display: none;
+  }
 /* carousel slide */
 .carousel {
     top: 55px;

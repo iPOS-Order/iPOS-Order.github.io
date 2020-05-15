@@ -24,6 +24,10 @@
 </head>
 
 <body>
+  <!-- loading -->
+  <div class="load-bg">
+    <div id="loader"></div>
+  </div>
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -79,7 +83,7 @@
         <div class="card">
           <div class="card-header" data-toggle="collapse" href="#order-start">
             <a class="card-link">
-              <i class="fa fa-clock"></i>  調理開始<span class="order-number" id="start-number">0</span>
+              <i class="fa fa-clock"></i> 調理開始<span class="order-number" id="start-number">0</span>
             </a>
           </div>
           <div id="order-start" class="collapse show" data-parent="#accordion">
@@ -102,7 +106,7 @@
         <div class="card">
           <div class="collapsed card-header" data-toggle="collapse" href="#cooking">
             <a class="card-link">
-            <i class="fa fa-hourglass-half"></i>  烹飪中<span class="order-number" id="cooking-number">0</span>
+              <i class="fa fa-hourglass-half"></i> 烹飪中<span class="order-number" id="cooking-number">0</span>
             </a>
           </div>
           <div id="cooking" class="collapse" data-parent="#accordion">
@@ -125,7 +129,7 @@
         <div class="card">
           <div class="card-header collapsed" data-toggle="collapse" href="#arrive">
             <a class="card-link">
-              <i class="fa fa-utensils"></i>  送達<span class="order-number" id="arrive-number">0</span>
+              <i class="fa fa-utensils"></i> 送達<span class="order-number" id="arrive-number">0</span>
             </a>
           </div>
           <div id="arrive" class="collapse" data-parent="#accordion">
@@ -161,7 +165,13 @@
 </html>
 <script>
   $(function () {
+    // loading mask
+    $('li a').click(function () {
+      $('.load-bg').show();
+    });
+    // GO TO SHOPPING CART
     $('#view-cart').click(function () {
+      $('.load-bg').show();
       window.location.href = 'shopping-cart.html';
     });
     /* 購物車資訊 */

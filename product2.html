@@ -84,6 +84,10 @@
           </div>
         </div>
     </div> -->
+    <!-- loading -->
+    <div class="load-bg">
+      <div id="loader"></div>
+    </div>
     <div id="wrapper" class="toggled">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
@@ -230,6 +234,13 @@
 </html>
 <script>
   $(function () {
+    // loading mask
+    $('a').click(function () {
+      $('.load-bg').show();
+    });
+    $('.product-grid').click(function () {
+      $('.load-bg').show();
+    });
     // 亂數取桌號
     if (window.localStorage.getItem("desk-number") == null) {
       var desk_number = Math.floor(Math.random() * 50)
@@ -254,6 +265,7 @@
     }
   })
   $('#view-cart').click(function () {
+    $('.load-bg').show();
     window.location.href = 'shopping-cart.html';
   });
   $('.add-to-cart').click(function () {

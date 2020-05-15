@@ -23,6 +23,10 @@
 </head>
 
 <body>
+  <!-- loading -->
+  <div class="load-bg">
+    <div id="loader"></div>
+  </div>
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -98,7 +102,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=drink&name=可樂&displayname=可樂&price=45'">
+          <div class="product-grid"
+            onclick="location.href='prodcut_detail.html?pid=drink&name=可樂&displayname=可樂&price=45'">
             <div class="product-image">
               <a href="#">
                 <img class="pic-1" src="images/drink.jpg">
@@ -125,7 +130,8 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=drink1&name=雪碧&displayname=雪碧&price=45'">
+          <div class="product-grid"
+            onclick="location.href='prodcut_detail.html?pid=drink1&name=雪碧&displayname=雪碧&price=45'">
             <div class="product-image">
               <a href="#">
                 <img class="pic-1" src="images/drink1.jpg">
@@ -151,7 +157,8 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="product-grid" onclick="location.href='prodcut_detail.html?pid=drink2&name=紅茶&displayname=紅茶&price=30'">
+          <div class="product-grid"
+            onclick="location.href='prodcut_detail.html?pid=drink2&name=紅茶&displayname=紅茶&price=30'">
             <div class="product-image">
               <a href="#">
                 <img class="pic-1" src="images/drink2.jpg">
@@ -187,6 +194,13 @@
 
 <script>
   $(function () {
+    // loading mask
+    $('a').click(function () {
+      $('.load-bg').show();
+    });
+    $('.product-grid').click(function () {
+      $('.load-bg').show();
+    });
     // 亂數取桌號
     if (window.localStorage.getItem("desk-number") == null) {
       var desk_number = Math.floor(Math.random() * 50)
@@ -211,6 +225,7 @@
     }
   })
   $('#view-cart').click(function () {
+    $('.load-bg').show();
     window.location.href = 'shopping-cart.html';
   });
   $('.add-to-cart').click(function () {
@@ -225,10 +240,12 @@
       var obj_res = JSON.parse(window.localStorage.getItem("cart-food-data"));
       var count = 0;
       var total = 0;
+      var max_count = 0;
       $(obj_res).each(function (index) {
 
         if (obj_res[index].pid == pid) {
           var number = obj_res[index].num + 1;
+          
           temp_array.push({ 'pid': pid, 'name': name, 'price': price, 'num': number });
           count++;
           total = number + total;
@@ -237,7 +254,8 @@
                           <span>'+ name + ' * ' + number + '</span>\
                       </div>'
         }
-        else {
+        else
+        {
 
           temp_array.push(obj_res[index]);
           total = obj_res[index].num + total;

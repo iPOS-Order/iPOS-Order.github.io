@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="all">
   <!--- 客製化css都在這 -->
   <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-  
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="js/jquery-1.11.1.min.js"></script>
@@ -76,13 +77,10 @@
     </nav>
   </header>
   <main role="main" class="flex-shrink-0">
-    <!-- <div class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="images/bg2.jpg" alt="">
-          </div>
-        </div>
-    </div> -->
+    <!-- loading -->
+    <div class="load-bg">
+      <div id="loader"></div>
+    </div>
     <div id="wrapper" class="toggled">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
@@ -169,6 +167,13 @@
 </html>
 <script>
   $(function () {
+    // loading mask
+    $('a').click(function () {
+      $('.load-bg').show();
+    });
+    $('.product-grid').click(function () {
+      $('.load-bg').show();
+    });
     // 亂數取桌號
     if (window.localStorage.getItem("desk-number") == null) {
       var desk_number = Math.floor(Math.random() * 50)
@@ -193,6 +198,7 @@
     }
   })
   $('#view-cart').click(function () {
+    $('.load-bg').show();
     window.location.href = 'shopping-cart.html';
   });
   $('.add-to-cart').click(function () {

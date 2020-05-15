@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/sidebar.css" type="text/css" media="all">
     <!--- 客製化css都在這 -->
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/product_detail.css" type="text/css" media="all">
     <!-- <link rel="stylesheet" type="text/css" href="css/animate.min.css" /> -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -24,6 +25,11 @@
 </head>
 
 <body>
+    <!-- loading -->
+    <div class="load-bg">
+        <div id="loader"></div>
+    </div>
+
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -37,8 +43,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html"><i class="fa fa-home"></i> 回首頁</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html"><i class="fa fa-utensils"></i> 全部 <span
+                    <li class="nav-item">
+                        <a class="nav-link" href="product3.html"><i class="fa fa-utensils"></i> 全部 <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -95,7 +101,7 @@
                     <a class="grey-btn" href="javascript:history.go(-1);"><i class="fas fa-undo-alt"></i> 回上一頁</a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row product_content">
                 <div class="col-md-7 col-sm-12">
                     <div class="product-large-image">
                         <!-- <img class="pic-1" src="images/kali.jpg"> -->
@@ -129,25 +135,31 @@
 
 </html>
 <script>
-    var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
-    var total = 0
+    
     //  window.localStorage.clear();
     $(function () {
+        // loading mask
+        $('li a').click(function(){
+            $('.load-bg').show();
+        })
+        $('.grey-btn').click(function(){
+            $('.load-bg').show();
+        })
+        // go to cart
+        $('#view-cart').click(function () {
+            $('.load-bg').show();
+            window.location.href = 'shopping-cart.html';
+        });
         /********* 調整數量 start ************/
         $('#plus-btn').click(function(){
             var product_number = parseInt($('.product-number').val());
             if(product_number < 99){
                 $('.product-number').val(product_number+1)
             }
-            else
-            {
-                alert('不得大於99');
-            }
         })
         $('#minus-btn').click(function(){
             var product_number = parseInt($('.product-number').val());
             if(product_number <= 1){
-                alert('不能小於0');
             }else{
                 $('.product-number').val(product_number-1)                
             }
@@ -188,6 +200,8 @@
         var cart_total_number = 0
         var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
         var cart_content = ''
+    //     var cart_data = JSON.parse(window.localStorage.getItem("cart-food-data"))
+    // var total = 0
         if (window.localStorage.getItem("cart-food-data") != null) {
             $(cart_data).each(function (index) {
                 cart_total_number = cart_total_number + cart_data[index].num
@@ -201,9 +215,6 @@
             $('.order-content').html(cart_content);
         }
     })
-    $('#view-cart').click(function () {
-        window.location.href = 'shopping-cart.html';
-    });
     $('.pd-add-to-cart').click(function () {
 
         var pid = $(this).data('pid');
@@ -222,10 +233,15 @@
                 var obj_res = JSON.parse(window.localStorage.getItem("cart-food-data"));
                 var count = 0;
                 var total = 0;
+                var max_count = 0;
                 $(obj_res).each(function (index) {
 
                     if (obj_res[index].pid == pid) {
                         var number = obj_res[index].num + num;
+                        if(number > 99){
+                            number = 99;
+                            max_count++
+                        }
                         temp_array.push({ 'pid': pid, 'name': name, 'price': price, 'num': number });
                         count++;
                         total = number + total;
@@ -249,13 +265,21 @@
                 }
 
                 $('#cart-number').html(total);
-
+                if(max_count > 0)
+                {
+                    alert('最高點餐數量為99');
+                }
+                else
+                {
+                    alert('加入購物車成功');
+                }
             }
             else {
                 var arr_obj_param = [{ 'pid': pid, 'name': name, 'price': price, 'num': num }];
                 window.localStorage.setItem("cart-food-data", JSON.stringify(arr_obj_param))
                 $('#cart-number').html(num);
                 $('#cart-number').show();
+                alert('加入購物車成功');
             }
         }
         else

@@ -9,7 +9,7 @@ body{
 
 .service{
     cursor: pointer;
-    width: 51%;
+    width: 50%;
     height: 100%;
     background-color: steelblue;
     text-align: center;
@@ -22,7 +22,7 @@ body{
 
 .order{
     cursor: pointer;
-    width: 51%;
+    width: 50%;
     height: 100%;
     background-color: teal;
     text-align: center;
@@ -31,7 +31,7 @@ body{
     position: fixed;
     right: 1px;
     overflow: hidden;
-    
+
 }
 
 .service-font{
@@ -45,14 +45,14 @@ body{
     height: 100%;
     vertical-align: middle;
 }
-    
+
 /*****  rwd ******/
 @media (max-width: 1024px){
     .service-font{
         font-size: 4em;
         /* margin-top: 5%; */
     }
-    
+
     .order-font{
         font-size: 4em;
         /* margin-top: 5%; */
@@ -76,3 +76,42 @@ body{
         margin-top: 50%;
     }
 }
+
+/* loading popup */
+/* Center the loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .load-bg{
+    background-color:#000;
+    opacity:0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    position: fixed;
+    display: none;
+  }
